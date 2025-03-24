@@ -1,6 +1,7 @@
 import { openai } from '@ai-sdk/openai';
 import { Agent } from '@mastra/core/agent';
-import { weatherTool, noteApiTool, trendingTopicsTool, articleEvaluationTool } from '../tools';
+import { weatherTool, noteApiTool, trendingTopicsTool, articleEvaluationTool, dalleImageTool } from '../tools';
+import { imageGenerationAgent } from './imageGenerationAgent';
 
 // Weather agent (existing)
 export const weatherAgent = new Agent({
@@ -55,3 +56,6 @@ export const articleAgent = new Agent({
     articleEvaluationTool
   },
 });
+
+// Export the image generation agent
+export { imageGenerationAgent };

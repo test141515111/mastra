@@ -5,6 +5,7 @@ import { z } from 'zod';
 import { noteApiTool } from './noteApiTool';
 import { trendingTopicsTool } from './trendingTopicsTool';
 import { articleEvaluationTool } from './articleEvaluationTool';
+import { dalleImageTool } from './dalleImageTool';
 
 interface GeocodingResponse {
   results: {
@@ -107,4 +108,4 @@ function getWeatherCondition(code: number): string {
 }
 
 // Export our new tools
-export { noteApiTool, trendingTopicsTool, articleEvaluationTool };
+export { noteApiTool, trendingTopicsTool, articleEvaluationTool, dalleImageTool };
