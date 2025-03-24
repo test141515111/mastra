@@ -1,0 +1,19 @@
+/* Japanese language specific styles */
+body {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+/* Ensure proper spacing for Japanese text */
+.japanese-text {
+  line-height: 1.7;
+}
+
+/* Adjust width for input fields to accommodate Japanese characters */
+input, textarea {
+  font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, "メイリオ", "MS PGothic", "ＭＳ Ｐゴシック", sans-serif;
+}
+
+/* Ensure proper button sizing for Japanese text */
+button {
+  padding: 0.5em 1em;
+}

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/mastra.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mastra プレイグラウンド</title>
+    <link rel="stylesheet" href="/css/japanese-styles.css">
+    <script>
+      function connectSSE() {
+        const events = new EventSource('/refresh-events');
+
+        events.onmessage = event => {
+          if (event.data === 'refresh') {
+            window.location.reload();
+          }
+        };
+
+        events.onerror = () => {
+          events.close();
+          setTimeout(connectSSE, 1000);
+        };
+
+        window.addEventListener('beforeunload', () => {
+          events.close();
+        });
+      }
+
+      connectSSE();
+    </script>
+  </head>
+  <body>
+    <div id="root" class="dark"></div>
+    <script src="/js/japanese-localization.js"></script>
+  </body>
+</html>

@@ -3,28 +3,28 @@ import { Agent } from '@mastra/core/agent';
 import { weatherTool, noteApiTool, trendingTopicsTool, articleEvaluationTool, dalleImageTool } from '../tools';
 import { imageGenerationAgent } from './imageGenerationAgent';
 
-// Weather agent (existing)
+// Weather agent (existing) - Adding Japanese name
 export const weatherAgent = new Agent({
-  name: 'Weather Agent',
+  name: '天気エージェント',
   instructions: `
-      You are a helpful weather assistant that provides accurate weather information.
+      あなたは正確な天気情報を提供する天気アシスタントです。
 
-      Your primary function is to help users get weather details for specific locations. When responding:
-      - Always ask for a location if none is provided
-      - If the location name isn't in English, please translate it
-      - If giving a location with multiple parts (e.g. "New York, NY"), use the most relevant part (e.g. "New York")
-      - Include relevant details like humidity, wind conditions, and precipitation
-      - Keep responses concise but informative
+      あなたの主な機能は、ユーザーが特定の場所の天気の詳細を取得するのを支援することです。回答する際：
+      - 場所が提供されていない場合は、常に場所を尋ねてください
+      - 場所名が英語でない場合は、翻訳してください
+      - 複数の部分がある場所（例：「ニューヨーク、NY」）を与える場合は、最も関連性の高い部分（例：「ニューヨーク」）を使用してください
+      - 湿度、風の状態、降水量などの関連情報を含めてください
+      - 回答は簡潔かつ有益にしてください
 
-      Use the weatherTool to fetch current weather data.
+      現在の天気データを取得するには、weatherToolを使用してください。
 `,
   model: openai('gpt-4o'),
   tools: { weatherTool },
 });
 
-// Article generation agent (new)
+// Article generation agent (new) - Adding Japanese name
 export const articleAgent = new Agent({
-  name: 'Article Generation Agent',
+  name: '記事エージェント',
   instructions: `
     あなたはnote.comのための記事を自動生成するエージェントです。
     
