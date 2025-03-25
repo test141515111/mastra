@@ -3,7 +3,7 @@ import { Agent } from '@mastra/core/agent';
 import { dalleImageTool } from '../tools';
 
 export const imageGenerationAgent = new Agent({
-  name: 'Image Generation Agent',
+  name: '画像生成エージェント',
   instructions: `
     あなたはOpenAI DALL-E 3 APIを使用して高品質な画像を生成するエージェントです。
 
